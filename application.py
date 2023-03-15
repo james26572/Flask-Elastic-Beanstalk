@@ -1,14 +1,15 @@
 from flask import Flask
 from flask import jsonify
+from flask import render_template,request
 
 application = Flask(__name__)
 
 
 @application.route("/")
 def hello():
-    """Return a friendly HTTP greeting."""
-    print("I am inside hello world")
-    return "Continuous Delivery Demo"
+    
+    return render_template("index.html")
+    #return "Continuous Delivery Demo"
 
 
 @application.route("/echo/<name>")
